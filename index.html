@@ -76,6 +76,8 @@ $(function(){
   //map = L.map('demoMap', { dragging: false, zoomControl: false, minZoom: zoomlevel, maxZoom: zoomlevel }).setView( [ lat, lng ], zoomlevel );
   map = L.map('demoMap', { dragging: false, zoomControl: false }).setView( [ lat, lng ], zoomlevel );
   //map = L.map('demoMap', { dragging: true, zoomControl: true }).setView( [ lat, lng ], zoomlevel );
+
+  /*
   L.tileLayer(
     'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
       attribution: 'Map data &copy; <a href="//openstreetmap.org/">OpenStreetMap</a>',
@@ -106,6 +108,7 @@ $(function(){
   bounds.extend( [ min_lat, min_lng ] );
   bounds.extend( [ max_lat, max_lng ] );
   map.fitBounds( bounds );
+  */
 });
 </script>
 <style>
