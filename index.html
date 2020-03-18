@@ -62,7 +62,6 @@ var zoomlevel = 10;
 var deg = 0;
 
 var map = null;
-var markers = [];
 
 var images = [
   { id: '157009', lat: 35.6590424220025, lng: 139.700615108013 },     //. 東京都渋谷区道玄坂
@@ -94,8 +93,9 @@ $(function(){
     var image = images[i];
     var marker = L.marker( [ image.lat, image.lng ] ).addTo( map );
     marker.bindPopup( "<img src='//manholemap.juge.me/get?id=" + image.id + "' width='80%'/>" ).openPopup();
-    //marker.bindPopup( image.id ).openPopup();
-    markers.push( marker );
+
+    //. 結局、manholemap.juge.me 以下の画像はキャッシュされない。。方法はないか？
+    //. 同じドメイン内に Proxy っぽい API を作ってそこを経由させる？
 
     //. 東西南北の端位置
     if( min_lat > image.lat ){ min_lat = image.lat; }
