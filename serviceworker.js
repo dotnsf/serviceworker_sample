@@ -10,7 +10,7 @@ const STATIC_FILES = [
     ORIGIN + '/logo192.png',
     ORIGIN + '/bootstrap.css',
     ORIGIN + '/bootstrap.min.css.map',
-    ORIGIN + '/bootstrap.js'
+    ORIGIN + '/bootstrap.js',
     ORIGIN + '/bootstrap.min.js.map',
     ORIGIN + '/jquery.js',
     ORIGIN + '/leaflet.css',
