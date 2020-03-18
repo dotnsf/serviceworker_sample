@@ -1,4 +1,4 @@
-const VERSION = "2";
+const VERSION = "3";
 const ORIGIN = location.protocol + '//' + location.hostname;
 
 const STATIC_CACHE_KEY = 'static-' + VERSION;
@@ -7,7 +7,9 @@ const STATIC_FILES = [
     ORIGIN + '/images/marker-icon-2x.png',
     ORIGIN + '/logo192.png',
     ORIGIN + '/bootstrap.css',
+    ORIGIN + '/bootstrap.min.css.map',
     ORIGIN + '/bootstrap.js'
+    ORIGIN + '/bootstrap.min.js.map',
     ORIGIN + '/jquery.js',
     ORIGIN + '/leaflet.css',
     ORIGIN + '/leaflet.js',
