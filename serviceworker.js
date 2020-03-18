@@ -1,21 +1,16 @@
-const VERSION = "3";
+const VERSION = "2";
 const ORIGIN = location.protocol + '//' + location.hostname;
 
 const STATIC_CACHE_KEY = 'static-' + VERSION;
 const STATIC_FILES = [
     ORIGIN + '/',
-    ORIGIN + '/img/logo.png',
-    ORIGIN + '/css/bootstrap.min.css',
-    ORIGIN + '/css/bootstrap-reboot.css',
-    ORIGIN + '/css/slick.min.css',
-    ORIGIN + '/css/slick-theme.min.css',
-    ORIGIN + '/css/jquery.jqpuzzle.css',
-    ORIGIN + '/css/common.css',
-    ORIGIN + '/js/jquery.js',
-    ORIGIN + '/js/bootstrap.js',
-    ORIGIN + '/js/slick.min.js',
-    ORIGIN + '/js/jquery.jqpuzzle.min.js',
-    ORIGIN + '/js/common.js',
+    ORIGIN + '/images/marker-icon-2x.png',
+    ORIGIN + '/logo192.png',
+    ORIGIN + '/bootstrap.css',
+    ORIGIN + '/bootstrap.js'
+    ORIGIN + '/jquery.js',
+    ORIGIN + '/leaflet.css',
+    ORIGIN + '/leaflet.js',
 ];
 const CACHE_KEYS = [
     STATIC_CACHE_KEY
