@@ -45,6 +45,7 @@
 //. Register ServiceWorker
 if( 'serviceWorker' in navigator ){
   window.addEventListener( 'load', function(){
+    //. github pages の場合、ファイルパスの頭に  './' をつける必要あり #1
     navigator.serviceWorker.register( './serviceworker.js' ).then( function( reg ){
       console.log( 'Service worker registered.', reg );
     });
@@ -92,8 +93,8 @@ $(function(){
   for( var i = 0; i < images.length; i ++ ){
     var image = images[i];
     var marker = L.marker( [ image.lat, image.lng ] ).addTo( map );
-    //marker.bindPopup( "<img src='//manholemap.juge.me/get?id=" + image.id + "' width='80%'/>" ).openPopup();
-    marker.bindPopup( image.id ).openPopup();
+    marker.bindPopup( "<img src='//manholemap.juge.me/get?id=" + image.id + "' width='80%'/>" ).openPopup();
+    //marker.bindPopup( image.id ).openPopup();
     markers.push( marker );
 
     //. 東西南北の端位置
