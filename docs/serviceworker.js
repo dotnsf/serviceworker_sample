@@ -4,10 +4,12 @@ const ORIGIN = location.protocol + '//' + location.hostname;
 const STATIC_CACHE_KEY = 'static-' + VERSION;
 const STATIC_FILES = [
     ORIGIN + '/',
+    ORIGIN + '/index.html',
     ORIGIN + '/images/marker-icon-2x.png',
     ORIGIN + '/images/marker-icon.png',
     ORIGIN + '/images/marker-shadow.png',
     ORIGIN + '/logo192.png',
+    ORIGIN + '/logo512.png',
     ORIGIN + '/bootstrap.css',
     ORIGIN + '/bootstrap.min.css.map',
     ORIGIN + '/bootstrap.js',
