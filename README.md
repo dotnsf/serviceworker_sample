@@ -18,6 +18,9 @@ PWA のための ServiceWorker 実験用サンプルアプリ
 - ServiceWorker について
   - https://qiita.com/hrkt/items/71c951082c6d90c7cd78
 
+- ServiceWorker のライフサイクル（イベント）
+  - https://qiita.com/y_fujieda/items/f9e765ac9d89ba241154
+
 - URLPattern が生まれた背景
   - https://webfrontend.ninja/js-urlpattern/
 
