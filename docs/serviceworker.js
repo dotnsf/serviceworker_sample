@@ -34,6 +34,7 @@ const STATIC_FILES = [
     ORIGIN + '/serviceworker_sample/leaflet.css',
     ORIGIN + '/serviceworker_sample/leaflet.js',
 
+    //. 以下は Developer Console でみるとキャッシュできていない。が、オフラインにしても見れている？？
     'https://manholemap.juge.me/get?id=157009',
     'https://manholemap.juge.me/get?id=1125001',
     'https://manholemap.juge.me/get?id=1520004',
@@ -44,13 +45,15 @@ const CACHE_KEYS = [
     STATIC_CACHE_KEY
 ];
 
+//. ここで（インストール時に）キャッシュする
+//. 外部 URL も可、っぽい
 self.addEventListener('install', event => {
     event.waitUntil(
         caches.open(STATIC_CACHE_KEY).then(cache => {
             return Promise.all(
                 STATIC_FILES.map(url => {
                     return fetch(new Request(url, { cache: 'no-cache', mode: 'no-cors' })).then(response => {
-                    return cache.put(url, response);
+                        return cache.put(url, response);
                     });
                 })
             );
@@ -65,7 +68,7 @@ self.addEventListener('activate', event => {
                 // STATIC_CACHE_KEYではないキャッシュを探す
                 return cacheName !== STATIC_CACHE_KEY;
             });
-            }).then((cachesToDelete) => {
+        }).then((cachesToDelete) => {
             return Promise.all(cachesToDelete.map((cacheName) => {
                 // いらないキャッシュを削除する
                 return caches.delete(cacheName);
@@ -105,8 +108,7 @@ self.addEventListener('fetch', event => {
                 // 2つの Stream があるようにする
                 let responseToCache = response.clone();
 
-                caches.open(STATIC_CACHE_KEY)
-                .then((cache) => {
+                caches.open(STATIC_CACHE_KEY).then((cache) => {
                     cache.put(event.request, responseToCache);
                 });
 
