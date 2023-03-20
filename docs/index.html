@@ -49,8 +49,41 @@
 //. Register ServiceWorker
 if( 'serviceWorker' in navigator ){
   window.addEventListener( 'load', function(){
-    //. github pages の場合、ファイルパスの頭に  './' をつける必要あり #1
-    navigator.serviceWorker.register( './serviceworker.js' ).then( function( reg ){
+    navigator.serviceWorker.register( 
+      //. github pages の場合、ファイルパスの頭に  './' をつける必要あり #1
+      './serviceworker.js'
+      ,{
+        scope: new URLPattern({
+          baseURL: self.origin,   //. http://localhost:8080
+          pathname: "/*"
+        })
+        /*
+        //. キャッシュ対象スコープの URL パターンを複数指定したいが、URLPatternList は未実装っぽい
+        scope: new URLPatternList([
+          {
+            baseURL: self.origin,
+            pathname: "/*"
+          },
+          {
+            baseURL: self.origin,
+            pathname: "/serviceworker_sample"
+          },
+          {
+            baseURL: self.origin,
+            pathname: "/serviceworker_sample/*"
+          },
+          {
+            baseURL: "http://manholemap.juge.me",
+            pathname: "/get*"
+          },
+          {
+            baseURL: "https://manholemap.juge.me",
+            pathname: "/get*"
+          }
+        ])
+        */
+      }
+    ).then( function( reg ){
       console.log( 'Service worker registered.', reg );
     });
   });
