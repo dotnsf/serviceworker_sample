@@ -52,12 +52,13 @@ if( 'serviceWorker' in navigator ){
     navigator.serviceWorker.register( 
       //. github pages の場合、ファイルパスの頭に  './' をつける必要あり #1
       './serviceworker.js'
+      /*
       ,{
         scope: new URLPattern({
           baseURL: self.origin,   //. http://localhost:8080
           pathname: "/*"
         })
-        /*
+
         //. キャッシュ対象スコープの URL パターンを複数指定したいが、URLPatternList は未実装っぽい
         scope: new URLPatternList([
           {
@@ -81,8 +82,8 @@ if( 'serviceWorker' in navigator ){
             pathname: "/get*"
           }
         ])
-        */
       }
+      */
     ).then( function( reg ){
       console.log( 'Service worker registered.', reg );
     });

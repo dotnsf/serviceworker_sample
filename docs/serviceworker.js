@@ -1,8 +1,9 @@
-const VERSION = "5";
+const VERSION = "6";
 const ORIGIN = location.protocol + '//' + location.hostname;
 
 const STATIC_CACHE_KEY = 'static-' + VERSION;
 const STATIC_FILES = [
+    /*
     ORIGIN + '/',
     ORIGIN + '/index.html',
     ORIGIN + '/images/marker-icon-2x.png',
@@ -17,6 +18,27 @@ const STATIC_FILES = [
     ORIGIN + '/jquery.js',
     ORIGIN + '/leaflet.css',
     ORIGIN + '/leaflet.js',
+    */
+    ORIGIN + '/serviceworker_sample/',
+    ORIGIN + '/serviceworker_sample/index.html',
+    ORIGIN + '/serviceworker_sample/images/marker-icon-2x.png',
+    ORIGIN + '/serviceworker_sample/images/marker-icon.png',
+    ORIGIN + '/serviceworker_sample/images/marker-shadow.png',
+    ORIGIN + '/serviceworker_sample/logo192.png',
+    ORIGIN + '/serviceworker_sample/logo512.png',
+    ORIGIN + '/serviceworker_sample/bootstrap.css',
+    ORIGIN + '/serviceworker_sample/bootstrap.min.css.map',
+    ORIGIN + '/serviceworker_sample/bootstrap.js',
+    ORIGIN + '/serviceworker_sample/bootstrap.min.js.map',
+    ORIGIN + '/serviceworker_sample/jquery.js',
+    ORIGIN + '/serviceworker_sample/leaflet.css',
+    ORIGIN + '/serviceworker_sample/leaflet.js',
+
+    'https://manholemap.juge.me/get?id=157009',
+    'https://manholemap.juge.me/get?id=1125001',
+    'https://manholemap.juge.me/get?id=1520004',
+    'https://manholemap.juge.me/get?id=107005',
+    'https://manholemap.juge.me/get?id=1659010',
 ];
 const CACHE_KEYS = [
     STATIC_CACHE_KEY
