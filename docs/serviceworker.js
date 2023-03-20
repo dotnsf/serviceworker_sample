@@ -1,4 +1,4 @@
-const VERSION = "4";
+const VERSION = "5";
 const ORIGIN = location.protocol + '//' + location.hostname;
 
 const STATIC_CACHE_KEY = 'static-' + VERSION;
